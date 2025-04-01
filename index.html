@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET IT NOW - Online Grocery Delivery</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #008000;
+            color: white;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cart-btn {
+            background: #ffcc00;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: url('https://source.unsplash.com/1200x400/?grocery,vegetables') no-repeat center/cover;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        .shop-now-btn {
+            display: inline-block;
+            background: #ffcc00;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        /* Product Section */
+        .products {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .products h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            width: 200px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .product button {
+            background: #008000;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .product button:hover {
+            background: #005700;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">GET IT NOW</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Offers</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="cart-btn">🛒 Cart</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Fresh Groceries, Delivered Fast!</h1>
+        <p>Get your daily essentials at the best prices, delivered to your doorstep.</p>
+        <a href="#" class="shop-now-btn">Shop Now</a>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products">
+        <h2>Featured Products</h2>
+        <div class="product-container">
+
+            <div class="product">
+                <img src="https://source.unsplash.com/200x200/?rice,bowl" alt="Basmati Rice">
+                <h3>Basmati Rice (5kg)</h3>
+                <p>₹750</p>
+                <button onclick="addToCart('Basmati Rice', 750)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="https://source.unsplash.com/200x200/?wheat,flour" alt="Wheat Flour">
+                <h3>Wheat Flour (10kg)</h3>
+                <p>₹400</p>
+                <button onclick="addToCart('Wheat Flour', 400)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="https://source.unsplash.com/200x200/?milk,bottle" alt="Milk">
+                <h3>Full Cream Milk (1L)</h3>
+                <p>₹65</p>
+                <button onclick="addToCart('Full Cream Milk', 65)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="https://source.unsplash.com/200x200/?vegetables,fresh" alt="Vegetables">
+                <h3>Fresh Vegetables (Pack)</h3>
+                <p>₹299</p>
+                <button onclick="addToCart('Fresh Vegetables', 299)">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 GET IT NOW. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Cart Functionality -->
+    <script>
+        let cart = [];
+
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            alert(productName + " added to cart! Total items: " + cart.length);
+        }
+    </script>
+
+</body>
+</html>
